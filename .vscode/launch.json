@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "notificatdoor",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "web-server",
+            "flutterMode": "debug",
+            "toolArgs": [
+                "--web-hostname=0.0.0.0",
+                "--web-port=3000"
+            ]
+        },
+        {
+            "name": "notificatdoor (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "notificatdoor (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

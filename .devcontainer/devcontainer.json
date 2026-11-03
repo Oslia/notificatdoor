@@ -1,0 +1,50 @@
+{
+	"name": "Flutter",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+		  "no_cache": "true"
+		}
+	},
+	"postCreateCommand": "flutter pub get",
+	"forwardPorts": [3000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Flutter Web",
+			"onAutoForward": "notify"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			},
+			"extensions": [
+				"mhutchie.git-graph",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cpptools-themes",
+				"hbenl.vscode-test-explorer",
+				"openai.chatgpt",
+				"Dart-Code.flutter",
+				"Dart-Code.dart-code"
+			]
+		},
+		"codespaces": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			},
+			"extensions": [
+				"mhutchie.git-graph",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cpptools-themes",
+				"hbenl.vscode-test-explorer",
+				"openai.chatgpt",
+				"Dart-Code.flutter",
+				"Dart-Code.dart-code"
+			]
+		}
+	},
+	"runArgs": ["--privileged"]
+}
