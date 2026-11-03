@@ -2,9 +2,11 @@ import 'package:amplify_core/amplify_core.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:material_ui/material_ui.dart';
 import 'amplify_config.dart';
+import 'amplify_config_dev.dart';
 import 'login.dart';
 import 'wakeon.dart';
 import 'app_states.dart';
+import 'device_connectivity.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +16,7 @@ Future<void> main() async {
       AmplifyAuthCognito(),
     );
 
-    await Amplify.configure(amplifyConfig);
+    await Amplify.configure(amplifyConfigDev);
 
     runApp(const MyApp());
   } on AmplifyException catch (error) {
@@ -103,7 +105,15 @@ class _AuthGateState extends State<AuthGate> {
         }
 
         if (snapshot.data == true) {
-          return const WakeOn();
+          return Scaffold(
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                WakeOn(),
+                DeviceConnectivityIndicator(),
+              ],
+            ),
+          );
         }
 
         return Login();

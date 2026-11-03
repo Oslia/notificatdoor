@@ -13,7 +13,7 @@ const amplifyConfigDev = '''
         "CognitoUserPool": {
           "Default": {
             "PoolId": "ap-northeast-1_cnCAFo2Ba",
-            "AppClientId": "37hciku977k840e0vf4uifn02c",
+            "AppClientId": "66h8regff78tg4gfmq5pmmbo46",
             "Region": "ap-northeast-1"
           }
         },
@@ -21,7 +21,7 @@ const amplifyConfigDev = '''
           "Default": {
             "OAuth": {
               "WebDomain": "https://ap-northeast-1cncafo2ba.auth.ap-northeast-1.amazoncognito.com",
-              "AppClientId": "37hciku977k840e0vf4uifn02c",
+              "AppClientId": "66h8regff78tg4gfmq5pmmbo46",
               "SignInRedirectURI": "http://localhost:3000/",
               "SignOutRedirectURI": "http://localhost:3000/",
               "Scopes": [

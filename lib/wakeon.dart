@@ -52,37 +52,35 @@ class _WakeOnState extends State<WakeOn> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SizedBox(
-          width: 80,
-          height: 80,
-          child: ElevatedButton(
-            onPressed: _isSending ? null : _handlePowerButton,
-            style: ElevatedButton.styleFrom(
-              shape: const CircleBorder(
-                side: BorderSide(
-                  color: AppColors.secondary,
-                  width: 3,
-                ),
+    return Center(
+      child: SizedBox(
+        width: 80,
+        height: 80,
+        child: ElevatedButton(
+          onPressed: _isSending ? null : _handlePowerButton,
+          style: ElevatedButton.styleFrom(
+            shape: const CircleBorder(
+              side: BorderSide(
+                color: AppColors.secondary,
+                width: 3,
               ),
-              padding: EdgeInsets.zero,
-              backgroundColor: AppColors.primary,
-              foregroundColor: AppColors.secondary,
             ),
-            child: _isSending
-                ? const SizedBox(
-                    width: 26,
-                    height: 26,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 3,
-                    ),
-                  )
-                : const Icon(
-                    Icons.power_settings_new,
-                    size: 40,
-                  ),
+            padding: EdgeInsets.zero,
+            backgroundColor: AppColors.primary,
+            foregroundColor: AppColors.secondary,
           ),
+          child: _isSending
+              ? const SizedBox(
+                  width: 26,
+                  height: 26,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 3,
+                  ),
+                )
+              : const Icon(
+                  Icons.power_settings_new,
+                  size: 40,
+                ),
         ),
       ),
     );
@@ -91,7 +89,7 @@ class _WakeOnState extends State<WakeOn> {
 
 class WakeOnApi {
   static const String _apiUrl =
-      'https://2afkfbebc2.execute-api.ap-northeast-1.amazonaws.com/power_on';
+      'https://o0d2dsh35h.execute-api.ap-northeast-1.amazonaws.com/power_on';
 
   static Future<void> sendPacket() async {
     final accessToken = await AppStates.getAccessToken();
